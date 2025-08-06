@@ -10,7 +10,7 @@ const port = process.env.PORT || 3000;
 
 
 app.use(cors({
-    origin: ['http://127.0.0.1:5500', 'https://standarium-erp-frontend.vercel.app'],
+    origin: ['http://127.0.0.1:5500', 'https://vercel.com/canevojs-projects/standarium-erp-frontend/6Ps8DMMuYyWZyJUV1KL4CJogX3UW'],
     methods: ['GET', 'POST'],
     allowedHeaders: ['Content-Type'],
 }));
