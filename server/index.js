@@ -3,23 +3,22 @@ import { GoogleGenerativeAI } from '@google/generative-ai';
 import dotenv from 'dotenv';
 import cors from 'cors';
 
-dotenv.config(); 
+dotenv.config();
 
 const app = express();
 const port = process.env.PORT || 3000;
 
-
+// Configuração do CORS para permitir requisições do seu frontend
 app.use(cors({
-    origin: ['http://127.0.0.1:5500', 'https://standarium-erp-frontend.vercel.app/'],
+    // AJUSTE AQUI: Substitua pela URL exata do seu frontend no Vercel
+    origin: 'https://standarium-erp-frontend.vercel.app',
     methods: ['GET', 'POST'],
     allowedHeaders: ['Content-Type'],
 }));
 
 app.use(express.json());
 
-
 const geminiApiKey = process.env.GEMINI_API_KEY;
-
 
 if (!geminiApiKey) {
     console.error("Erro: A variável de ambiente GEMINI_API_KEY não está configurada.");
